@@ -11,3 +11,11 @@ def guardar_derivacion(numeros, desviacion):
     conn.commit()
     conn.close()
 
+def obtener_historial():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM derivaciones")
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
