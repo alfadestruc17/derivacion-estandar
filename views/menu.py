@@ -19,3 +19,12 @@ def ingresar_numeros():
         print("Entrada inválida.")
         return []
 
+def mostrar_historial():
+    historial = obtener_historial()
+    if historial:
+        print("\nHistorial de derivaciones:")
+        for id, numeros, desviacion, fecha in historial:
+            print(f"{fecha} | Números: [{numeros}] | Desviación: {desviacion:.2f}")
+    else:
+        print("No hay derivaciones registradas.")
+
