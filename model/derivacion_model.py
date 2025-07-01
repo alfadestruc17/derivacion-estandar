@@ -19,3 +19,10 @@ def obtener_historial():
     conn.close()
     return rows
 
+def promedio_derivaciones():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT AVG(desviacion) FROM derivaciones")
+    result = cursor.fetchone()[0]
+    conn.close()
+    return result
