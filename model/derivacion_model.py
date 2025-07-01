@@ -7,7 +7,7 @@ def guardar_derivacion(numeros, desviacion):
     fecha = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     numeros_str = ','.join(map(str, numeros))
     query = "INSERT INTO derivaciones (numeros, desviacion, fecha) VALUES (%s, %s, %s)"
-    cursor.execute(query, (numeros_str, desviacion, fecha))
+    cursor.execute(query, (numeros_str, float(desviacion), fecha))
     conn.commit()
     conn.close()
 
