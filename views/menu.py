@@ -12,11 +12,20 @@ def mostrar_menu():
     return input("Seleccione una opción: ")
 
 def ingresar_numeros():
-    entrada = input("Ingrese los números separados por coma: ")
     try:
-        return [float(x.strip()) for x in entrada.split(',')]
-    except:
-        print("Entrada inválida.")
+        cantidad = int(input("¿Cuántos números deseas ingresar?: "))
+        numeros = []
+        for i in range(cantidad):
+            while True:
+                try:
+                    num = float(input(f"Ingrese número {i + 1}: "))
+                    numeros.append(num)
+                    break
+                except ValueError:
+                    print("❌ Entrada inválida. Ingresa un número válido.")
+        return numeros
+    except ValueError:
+        print("❌ Entrada inválida. Por favor ingresa un número entero.")
         return []
 
 def mostrar_historial():
