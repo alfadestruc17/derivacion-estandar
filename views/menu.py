@@ -28,3 +28,9 @@ def mostrar_historial():
     else:
         print("No hay derivaciones registradas.")
 
+def mostrar_promedio():
+    promedio = promedio_derivaciones()
+    if promedio is not None:
+        print(f"\nPromedio de desviaciones estándar: {promedio:.2f}")
+    else:
+        print("No hay datos para calcular el promedio.")
