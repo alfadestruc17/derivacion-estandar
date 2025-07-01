@@ -11,3 +11,11 @@ def mostrar_menu():
     print("6. Salir")
     return input("Seleccione una opción: ")
 
+def ingresar_numeros():
+    entrada = input("Ingrese los números separados por coma: ")
+    try:
+        return [float(x.strip()) for x in entrada.split(',')]
+    except:
+        print("Entrada inválida.")
+        return []
+
